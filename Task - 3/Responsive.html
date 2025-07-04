@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Boxes with Hover</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6;
+      text-align: center;
+    }
+
+    h1 {
+      padding: 20px;
+      background-color: #4f46e5;
+      color: white;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .box {
+      flex: 1 1 250px;
+      max-width: 300px;
+      min-width: 200px;
+      padding: 40px 20px;
+      border-radius: 12px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .box:nth-child(1) { background-color: #34d399; } 
+    .box:nth-child(2) { background-color: #60a5fa; } 
+    .box:nth-child(3) { background-color: #f472b6; }  
+
+
+    .box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+  
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .box {
+        width: 90%;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive Boxes</h1>
+  <div class="container">
+    <div class="box">Mobile Friendly</div>
+    <div class="box">Tablet Ready</div>
+    <div class="box">Desktop Perfect</div>
+  </div>
+</body>
+</html>
